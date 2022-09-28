@@ -1,4 +1,5 @@
 import streamlit
+
 streamlit.title('My Parents New Healthy Diner')
 streamlit.header('Breakfast Favourites')
 streamlit.text('🥣 Omega 3 & Blueberry oatmeal')
@@ -29,7 +30,6 @@ streamlit.write('The user entered ', fruit_choice)
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 
-
 #take the changes
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do?
@@ -46,3 +46,6 @@ streamlit.dataframe(my_data_rows)
 #Allow the end user to add a fruit to the list
 add_my_fruit = streamlit.text_input('What fruit would you like to add?')
 streamlit.write('Thanks for adding ', add_my_fruit) 
+
+#This will not wprk correctly, but just go with it for now
+my_cur.execute("insert into fruit_load_list values('from streamlist')")
