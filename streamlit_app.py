@@ -42,7 +42,7 @@ except urllib.error.URLError as e:
     
 def insert_value(value):
   with my_cnx.cursor() as my_cur:
-    my_cur.execute("INSERT INTO FRUIT_LOAD_LIST VALUES (%s)",value)
+    my_cur.execute("INSERT INTO FRUIT_LOAD_LIST VALUES ('" + "Jackfruit","papaya","kiwi" and "guava" +"')",value)
     streamlit.write('Thank you for adding  ', value)
     
   
